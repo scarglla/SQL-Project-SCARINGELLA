@@ -40,11 +40,11 @@ NovaBank est un système de base de données relationnelle hautement sécurisé,
 Pour exécuter le déploiement complet de zéro à partir du script d'automatisation :
 
 1. Rendre le script exécutable :
-   chmod +x deploy.sh
+   chmod +x deploy.sh &&
    chmod +x tests.sh
 
 2. Lancer le script de réinitialisation globale :
-   sudo ./deploy.sh
+   sudo ./deploy.sh &&
    sudo ./tests.sh
 
 ## BONUS
