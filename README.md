@@ -8,6 +8,23 @@ Base de données PostgreSQL 18 d'une banque en ligne :
 
 ## Installation
 
+### Méthode recommandée : tout en un
+
+Le plus simple est d'exécuter `script_in_one_file.sh`, qui installe le serveur et crée toute la base en une seule fois, puis de lancer les tests :
+
+```bash
+chmod +x script_in_one_file.sh tests.sh
+sudo ./script_in_one_file.sh
+sudo ./tests.sh
+```
+
+- `script_in_one_file.sh` : installe PostgreSQL, configure `pg_hba.conf`, TLS et le pare-feu, puis crée la base complète (tables, données, vues, index, triggers, procédures, droits, bonus).
+- `tests.sh` : vérifie que tout marche et que les interdits sont refusés.
+
+### Méthode alternative : étape par étape
+
+Si on préfère, on peut aussi utiliser les scripts séparés, qui font la même chose en plusieurs étapes :
+
 ```bash
 chmod +x install_server.sh setup_project.sh tests.sh
 sudo ./install_server.sh
@@ -22,6 +39,7 @@ sudo ./tests.sh
 ## Fichiers
 
 ```
+script_in_one_file.sh  installation + base complète en un seul script
 install_server.sh      installation du serveur
 setup_project.sh       tout refaire
 tests.sh               tests
